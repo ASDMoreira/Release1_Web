@@ -6,9 +6,9 @@ import javax.persistence.*;
 import java.util.UUID;
 
 @Entity
-@Builder
 @AllArgsConstructor
 @NoArgsConstructor
+@Builder
 @ToString
 @Data
 public class Aluno {
@@ -27,11 +27,13 @@ public class Aluno {
     @Column(unique = true)
     private String matricula;
 
+    @OneToOne
     private Endereco endereco;
 
     @Embedded
     private Contato contato;
 
+    @ManyToOne
     private CursoEstuda cursoEstuda;
 
 }

@@ -1,7 +1,6 @@
 package br.com.edu.fafic.release1.domain;
 
 import lombok.*;
-
 import javax.persistence.*;
 import java.util.UUID;
 
@@ -27,6 +26,7 @@ public class Bibliotecario {
     @Column(unique = true)
     private String matricula;
 
+    @OneToOne
     private Endereco endereco;
 
     @Embedded

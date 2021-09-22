@@ -11,6 +11,7 @@ import java.util.UUID;
 @NoArgsConstructor
 @ToString
 @Data
+
 public class Professor {
 
     @Id
@@ -27,10 +28,12 @@ public class Professor {
     @Column(unique = true)
     private String matricula;
 
+    @OneToOne
     private Endereco endereco;
 
     @Embedded
     private Contato contato;
 
+    @ManyToOne
     private CursoLeciona cusrso;
 }

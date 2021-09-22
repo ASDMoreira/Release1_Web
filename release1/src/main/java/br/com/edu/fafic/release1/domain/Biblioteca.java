@@ -4,6 +4,7 @@ import lombok.*;
 
 import javax.persistence.*;
 import java.util.List;
+import java.util.UUID;
 
 @Entity
 @Builder
@@ -13,6 +14,10 @@ import java.util.List;
 @Data
 public class Biblioteca {
 
+    @Id
+    @GeneratedValue
+    private UUID id;
+
     private String nome;
     private String nomeInstituicao;
 
@@ -20,12 +25,12 @@ public class Biblioteca {
     private Bibliotecario bibliotecario;
 
 
-    @ManyToOne
+    @OneToMany
     private List<Livro> livros;
 
 
     @OneToMany
-    private Usuarios usuario;
+    private List<Usuarios> usuários;
 
 
 

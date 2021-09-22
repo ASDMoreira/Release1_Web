@@ -4,15 +4,20 @@ import br.com.edu.fafic.release1.domain.Livro;
 import org.springframework.data.jpa.repository.JpaRepository;
 
 import java.util.List;
+import java.util.Optional;
 import java.util.UUID;
 
 public interface LivroRepository extends JpaRepository<Livro, UUID> {
 
-    List<Livro> findLivroByNome(String nomeLivro);
+    Livro findLivroByNome(String nome);
 
-    Livro findLivroByArea(Integer lisvroArea);
+    Livro findLivroByArea(Integer area);
 
-    List<Livro> findByISBN(String isbn);
+    Livro findByIsbn(String isbn);
+
+
+
+
 
 
 }

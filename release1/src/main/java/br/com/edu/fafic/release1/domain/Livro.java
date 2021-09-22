@@ -4,6 +4,9 @@ import lombok.*;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
+import java.util.UUID;
 
 @Entity
 @Builder
@@ -12,6 +15,10 @@ import javax.persistence.Entity;
 @ToString
 @Data
 public class Livro {
+
+    @Id
+    @GeneratedValue
+    private UUID id;
 
     private String nome;
 

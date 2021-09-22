@@ -2,7 +2,9 @@ package br.com.edu.fafic.release1.domain;
 
 import lombok.*;
 
+import javax.persistence.Embeddable;
 
+@Embeddable
 @AllArgsConstructor
 @NoArgsConstructor
 @Data

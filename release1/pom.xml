@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+		 xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
 	<parent>
 		<groupId>org.springframework.boot</groupId>
@@ -8,11 +8,11 @@
 		<version>2.5.4</version>
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
-	<groupId>br.com.edu.fafic</groupId>
-	<artifactId>release1</artifactId>
+	<groupId>br.edu.fafic.ppi.ex.spring</groupId>
+	<artifactId>exemplo_spring</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<name>release1</name>
-	<description>Primeira atividade avaliativa.</description>
+	<name>exemplo_spring</name>
+	<description>Primeiro exemplo Spring Boot</description>
 	<properties>
 		<java.version>11</java.version>
 	</properties>
@@ -48,6 +48,7 @@
 			<plugin>
 				<groupId>org.springframework.boot</groupId>
 				<artifactId>spring-boot-maven-plugin</artifactId>
+				<version>2.5.4</version>
 				<configuration>
 					<excludes>
 						<exclude>
