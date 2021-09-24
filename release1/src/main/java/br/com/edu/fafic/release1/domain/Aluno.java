@@ -11,29 +11,10 @@ import java.util.UUID;
 @Builder
 @ToString
 @Data
-public class Aluno {
-
-    @Id
-    @GeneratedValue
-    private UUID id;
-
-    private String nome;
-
-    @Column(unique = true)
-    private String cpf;
-
-    private Integer genero;
-
-    @Column(unique = true)
-    private String matricula;
-
-    @OneToOne
-    private Endereco endereco;
+@DiscriminatorValue(value = "A")
+public class Aluno extends Usuarios{
 
     @Embedded
-    private Contato contato;
-
-    @ManyToOne
     private CursoEstuda cursoEstuda;
 
 }

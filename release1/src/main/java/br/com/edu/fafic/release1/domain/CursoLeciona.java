@@ -2,12 +2,10 @@ package br.com.edu.fafic.release1.domain;
 
 import lombok.*;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.Id;
-import java.util.UUID;
+import javax.persistence.Embeddable;
 
-@Entity
+
+@Embeddable
 @Builder
 @AllArgsConstructor
 @NoArgsConstructor
@@ -15,10 +13,6 @@ import java.util.UUID;
 @Data
 public class CursoLeciona {
 
-    @Id
-    @GeneratedValue
-    private UUID id;
-
-    private String nome;
-    private Integer area;
+    private String cursoLeciona;
+    private Integer areaLeciona;
 }

@@ -2,28 +2,34 @@ package br.com.edu.fafic.release1.domain;
 
 import lombok.*;
 
-
 import javax.persistence.*;
 import java.util.UUID;
 
 @Entity
-@Builder
 @AllArgsConstructor
 @NoArgsConstructor
 @ToString
 @Data
+@DiscriminatorColumn(name = "tipoUsuario")
 public class Usuarios {
 
     @Id
     @GeneratedValue
     private UUID id;
 
-    @OneToOne
-    private Bibliotecario bibliotecario;
+    private String nome;
 
-    @OneToOne
-    private Aluno aluno;
+    @Column(unique = true)
+    private String cpf;
 
-    @OneToOne
-    private Professor professor;
+    private Integer genero;
+
+    @Column(unique = true)
+    private String matricula;
+
+    @Embedded
+    private Endereco endereco;
+
+    @Embedded
+    private Contato contato;
 }

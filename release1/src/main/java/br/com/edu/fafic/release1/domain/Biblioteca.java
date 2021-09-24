@@ -21,15 +21,15 @@ public class Biblioteca {
     private String nome;
     private String nomeInstituicao;
 
-    @OneToOne
+    @OneToOne(cascade = CascadeType.ALL)
     private Bibliotecario bibliotecario;
 
 
-    @OneToMany
+    @OneToMany(cascade = CascadeType.ALL)
     private List<Livro> livros;
 
 
-    @OneToMany
+    @OneToMany(cascade = CascadeType.ALL)
     private List<Usuarios> usuários;
 
 

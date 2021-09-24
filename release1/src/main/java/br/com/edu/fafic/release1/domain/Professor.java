@@ -3,7 +3,7 @@ package br.com.edu.fafic.release1.domain;
 import lombok.*;
 
 import javax.persistence.*;
-import java.util.UUID;
+
 
 @Entity
 @Builder
@@ -11,29 +11,9 @@ import java.util.UUID;
 @NoArgsConstructor
 @ToString
 @Data
-
-public class Professor {
-
-    @Id
-    @GeneratedValue
-    private UUID id;
-
-    private String nome;
-
-    @Column(unique = true)
-    private String cpf;
-
-    private Integer genero;
-
-    @Column(unique = true)
-    private String matricula;
-
-    @OneToOne
-    private Endereco endereco;
+@DiscriminatorValue(value = "P")
+public class Professor extends Usuarios{
 
     @Embedded
-    private Contato contato;
-
-    @ManyToOne
-    private CursoLeciona cusrso;
+    private CursoLeciona cursoLeciona;
 }

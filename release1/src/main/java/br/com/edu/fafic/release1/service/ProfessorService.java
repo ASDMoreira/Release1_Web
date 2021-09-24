@@ -29,10 +29,11 @@ public class ProfessorService {
     }
 
     public Professor getProfessorByNome(String nome) {
-        return professorRepository.findByMatricula(nome);
+        return professorRepository.findByNome(nome);
     }
 
     public List<Professor> getAllProfessor() {
+
         return professorRepository.findAll();
     }
 

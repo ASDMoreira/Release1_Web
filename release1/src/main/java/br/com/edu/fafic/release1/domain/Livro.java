@@ -1,11 +1,9 @@
 package br.com.edu.fafic.release1.domain;
 
+import br.com.edu.fafic.release1.enums.Area;
 import lombok.*;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.Id;
+import javax.persistence.*;
 import java.util.UUID;
 
 @Entity

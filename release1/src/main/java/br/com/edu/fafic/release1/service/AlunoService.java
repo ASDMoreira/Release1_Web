@@ -1,6 +1,7 @@
 package br.com.edu.fafic.release1.service;
 
 import br.com.edu.fafic.release1.domain.Aluno;
+import br.com.edu.fafic.release1.domain.Professor;
 import br.com.edu.fafic.release1.repositories.AlunoRepository;
 import org.springframework.stereotype.Service;
 
@@ -31,11 +32,16 @@ public class AlunoService {
     }
 
     public Aluno getAlunoByMatricula(String matricula) {
+
         return alunoRepository.findByMatricula(matricula);
     }
 
     public Aluno getAlunoByNome(String nome) {
         return alunoRepository.findByNome(nome);
+    }
+
+    public List<Aluno> getAllAlunos() {
+        return alunoRepository.findAll();
     }
 
     public void deleteAluno(UUID id) {

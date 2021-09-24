@@ -2,6 +2,7 @@ package br.com.edu.fafic.release1.controllers;
 
 import br.com.edu.fafic.release1.domain.Bibliotecario;
 import br.com.edu.fafic.release1.domain.Livro;
+import br.com.edu.fafic.release1.enums.Area;
 import br.com.edu.fafic.release1.service.BibliotecaService;
 import br.com.edu.fafic.release1.service.LivroService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -27,11 +28,12 @@ public class LivroController {
 
     @GetMapping("/buscarlivro/Isbn/{isbn}")
     public ResponseEntity getLivroByIsbn(@PathVariable String isbn) {
-        return ResponseEntity.ok().body(livroService.getLivroByIsbn(isbn));
+        Livro lv = livroService.getLivroByIsbn(isbn);
+        return ResponseEntity.ok().body(lv);
     }
 
     @GetMapping("/buscarlivro/Area/{area}")
-    public ResponseEntity getLivroByArea(@PathVariable Integer area) {
+    public ResponseEntity pegarLivroByArea(@PathVariable("area") Integer area){
         return ResponseEntity.ok().body(livroService.getLivroByArea(area));
     }
 
@@ -43,14 +45,9 @@ public class LivroController {
 
     @DeleteMapping("/deletarlivro/UUID/{id}")
     public ResponseEntity deleteLivro(@PathVariable("id") UUID id) {
-        livroService.deleteLivro(id);
+        livroService.deleteLivroId(id);
         return ResponseEntity.noContent().build();
 
     }
 
-    @PutMapping("/atualizarlivro")
-    public ResponseEntity updateLivro(@RequestBody Livro livro) {
-        Livro lv = livroService.updateLivro(livro);
-        return ResponseEntity.ok().body(lv);
-    }
 }
